@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Super Mario Shooter</title>
+	<link rel="icon" type="image/jpg" href="assets/titlescreen_title.jpg">
+	<script type="text/javascript" src="lib/phaser.min.js" ></script>
+	<script type="text/javascript" src="preload.js" ></script>
+	<script type="text/javascript" src="titlescreen.js"></script>
+	<script type="text/javascript" src="options.js"></script>
+	<script type="text/javascript" src="preGame.js"></script>
+	<script type="text/javascript" src="playGame.js" ></script>
+	<script type="text/javascript" src="death.js"></script>
+	<script type="text/javascript" src="gameOver.js" ></script>
+	<style>
+		body{
+			margin: 0px;
+            padding: 0px;
+		}
+		@font-face {
+    		font-family: "Pixel";
+    		src: url("fonts/Pixel Emulator.otf") format("opentype");
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+				var game = new Phaser.Game(480, 800, Phaser.AUTO, "");
+
+				var soundEnabled = true;
+				var music;
+
+				var totalCoins = 0;
+				game.state.add('preload', MyGame.preloadState);
+				game.state.add('titlescreen', MyGame.titlescreenState);
+				game.state.add('options', MyGame.optionsState);
+                game.state.add('preGame', MyGame.preGameState);
+				game.state.add('playGame',  MyGame.playGameState);
+                game.state.add('death', MyGame.deathState)
+				game.state.add('gameOver', MyGame.gameOverState);
+				game.state.start('preload');
+    </script>
+</body>
+</html>
